@@ -1,5 +1,26 @@
-const App = () => {
-    return ( <div>App</div> );
-}
- 
-export default App;
+import React, { Suspense, lazy } from "react";
+import Loader from "./Loader/Loader";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Layout from "./Layout/Layout";
+
+export const App: React.FunctionComponent = () => {
+  const AuthPage = lazy(() => import("../pages/AuthPage/AuthPage"));
+  const AwardsPage = lazy(() => import("../pages/AwardsPage/AwardsPage"));
+  const ContactsPage = lazy(() => import("../pages/ContactsPage/ContactsPage"));
+  const MainPage = lazy(() => import("../pages/MainPage/MainPage"));
+  const PlanningPage = lazy(() => import("../pages/PlanningPage/PlanningPage"));
+  return (
+    <Suspense fallback={<Loader />}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/contact" element={<ContactsPage />} />
+          <Route path="/awards" element={<AwardsPage />} />
+          <Route path="/auth" element={<AuthPage />} />
+          <Route path="/planning" element={<PlanningPage />} />
+        </Route>
+        <Route path="*" element={<Navigate to={"/"} />} />
+      </Routes>
+    </Suspense>
+  );
+};

@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
+import { createSlice } from "@reduxjs/toolkit";
+//PayloadAction
 interface IAuthState {
   token: string;
   data: {
@@ -20,34 +20,30 @@ interface IAuthState {
 }
 
 const initialState: IAuthState = {
-  token:'',
-  data:{
-    user:{
-      email:'',
-      id:'',
-      balance:0
-    }
+  token: "",
+  data: {
+    user: {
+      email: "",
+      id: "",
+      balance: 0,
+    },
   },
   week: {
-    startWeekDate: '',
-    endWeekDate: '',
+    startWeekDate: "",
+    endWeekDate: "",
     rewardsGained: 0,
     rewardsPlanned: 0,
-    _id:'',
-    tasks: []
+    _id: "",
+    tasks: [],
   },
 };
 
 export const authSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {
- 
- 
-  },
+  reducers: {},
 });
 
 // export const { } = counterSlice.actions;
-
 
 export const authReducer = authSlice.reducer;

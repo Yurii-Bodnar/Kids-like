@@ -3,4 +3,3 @@ const Loader = () => {
 };
 
 export default Loader;
-<div>Loader...</div>;

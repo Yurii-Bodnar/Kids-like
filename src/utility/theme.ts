@@ -1,8 +1,9 @@
 import { ITheme } from "../types/types";
 export const theme: ITheme = {
   colors: {
-    black: "#000;",
+    black: "#000",
     grey: "#858598",
+    greySecond: "#a6abb9",
     white: "#FFFFFF",
     orange: "#FFBC33",
     orangeSecond: "#FFDE99",
@@ -12,6 +13,7 @@ export const theme: ITheme = {
 
   fonts: {
     main: "Montserrat, sans-serif",
+    mainM: "Montserrat Medium",
   },
   fontSizes: {
     xs: "10px",
@@ -23,7 +25,8 @@ export const theme: ITheme = {
     xxxl: "30px",
   },
   fontWeights: {
-    normal: 400,
+    regular: 400,
+    normal: 500,
     bold: 700,
   },
 

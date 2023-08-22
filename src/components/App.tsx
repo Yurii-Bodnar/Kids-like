@@ -14,7 +14,7 @@ export const App: React.FunctionComponent = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<MainPage />} />
-          <Route path="/contact" element={<ContactsPage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
           <Route path="/awards" element={<AwardsPage />} />
           <Route path="/auth" element={<AuthPage />} />
           <Route path="/planning" element={<PlanningPage />} />

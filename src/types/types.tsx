@@ -2,6 +2,7 @@ export interface ITheme {
   colors: {
     black: string;
     grey: string;
+    greySecond: string;
     white: string;
     orange: string;
     orangeSecond: string;
@@ -10,6 +11,7 @@ export interface ITheme {
   };
   fonts: {
     main: string;
+    mainM: string;
   };
   fontSizes: {
     xs: string;
@@ -21,6 +23,7 @@ export interface ITheme {
     xxxl: string;
   };
   fontWeights: {
+    regular: number;
     normal: number;
     bold: number;
   };
@@ -29,5 +32,37 @@ export interface ITheme {
     desc: string;
     onlyMob: string;
     onlyTab: string;
+  };
+}
+export type PropsForNavigation = {
+  isModalOpen: boolean;
+  setIsModalOpen: (value: boolean) => void;
+};
+
+export interface IAuthState {
+  token: string;
+  data: {
+    user: {
+      email: string;
+      id: string;
+      balance: number;
+      userName: string;
+    };
+  };
+  week: {
+    startWeekDate: string;
+    endWeekDate: string;
+    rewardsGained: number;
+    rewardsPlanned: number;
+    _id: string;
+    tasks: [
+      {
+        title: string;
+        reward: number;
+        imageUrl: string;
+        days: [{ date: string; isActive: boolean; isCompeted: boolean }];
+        id: string;
+      }
+    ];
   };
 }

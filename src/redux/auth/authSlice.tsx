@@ -1,31 +1,15 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { IAuthState } from "../../types/types";
 //PayloadAction
-interface IAuthState {
-  token: string;
-  data: {
-    user: {
-      email: string;
-      id: string;
-      balance: number;
-    };
-  };
-  week: {
-    startWeekDate: string;
-    endWeekDate: string;
-    rewardsGained: number;
-    rewardsPlanned: number;
-    _id: string;
-    tasks: [];
-  };
-}
 
 const initialState: IAuthState = {
-  token: "",
+  token: "1",
   data: {
     user: {
       email: "",
       id: "",
       balance: 0,
+      userName: "User",
     },
   },
   week: {
@@ -34,16 +18,31 @@ const initialState: IAuthState = {
     rewardsGained: 0,
     rewardsPlanned: 0,
     _id: "",
-    tasks: [],
+    tasks: [
+      {
+        days: [{ date: "", isActive: false, isCompeted: false }],
+        id: "",
+        imageUrl: "",
+        reward: 0,
+        title: "",
+      },
+    ],
   },
 };
 
 export const authSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {},
+  reducers: {
+    logoutUser(state) {
+      state.token = "";
+    },
+    getUserName(state, action: PayloadAction<string>) {
+      state.data.user.userName = action.payload;
+    },
+  },
 });
 
 // export const { } = counterSlice.actions;
-
+export const { logoutUser } = authSlice.actions;
 export const authReducer = authSlice.reducer;

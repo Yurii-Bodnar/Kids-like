@@ -3,15 +3,18 @@ export interface ITheme {
     black: string;
     grey: string;
     greySecond: string;
+    greyThird: string;
     white: string;
     orange: string;
     orangeSecond: string;
     blue: string;
     backdrop: string;
+    inputBg: string;
   };
   fonts: {
     main: string;
     mainM: string;
+    mainSemiBold: string;
   };
   fontSizes: {
     xs: string;
@@ -25,6 +28,7 @@ export interface ITheme {
   fontWeights: {
     regular: number;
     normal: number;
+    semiBold: number;
     bold: number;
   };
   breakpoints: {
@@ -39,15 +43,12 @@ export type PropsForNavigation = {
   setIsModalOpen: (value: boolean) => void;
 };
 
-export interface IAuthState {
+export interface IAuthResponse {
   token: string;
-  data: {
-    user: {
-      email: string;
-      id: string;
-      balance: number;
-      userName: string;
-    };
+  user: {
+    email: string;
+    id: string;
+    balance: number;
   };
   week: {
     startWeekDate: string;
@@ -61,8 +62,40 @@ export interface IAuthState {
         reward: number;
         imageUrl: string;
         days: [{ date: string; isActive: boolean; isCompeted: boolean }];
-        id: string;
+        id: string | null;
       }
     ];
   };
+  message: string;
+}
+export interface IAuthState {
+  token: string;
+  user: {
+    email: string;
+    id: string;
+    balance: number;
+  };
+  week: {
+    startWeekDate: string;
+    endWeekDate: string;
+    rewardsGained: number;
+    rewardsPlanned: number;
+    _id: string;
+    tasks: [
+      {
+        title: string;
+        reward: number;
+        imageUrl: string;
+        days: [{ date: string; isActive: boolean; isCompeted: boolean }];
+        id: string | null;
+      }
+    ];
+  };
+  isLoading: boolean;
+  error: string;
+  successMessage: string;
+}
+export interface IUser {
+  email: string;
+  password: string;
 }

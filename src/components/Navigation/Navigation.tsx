@@ -26,7 +26,6 @@ import { PropsForNavigation } from "../../types/types";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { selectToken } from "../../redux/auth/authSelectors";
 import UserInfo from "../UserInfo/UserInfo";
-import { logoutUser } from "../../redux/auth/authSlice";
 
 const Navigation: React.FC<PropsForNavigation> = ({
   setIsModalOpen,
@@ -82,7 +81,7 @@ const Navigation: React.FC<PropsForNavigation> = ({
           <Box>
             <BoxUserInfo>
               <UserInfo />
-              <BtnLogout type="button" onClick={() => dispatch(logoutUser())}>
+              <BtnLogout type="button" onClick={() =>{}}>
                 <BtnLogoutIcon>
                   <use href={btnLogout + "#icon-logout"}></use>
                 </BtnLogoutIcon>

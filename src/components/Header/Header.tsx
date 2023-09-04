@@ -25,7 +25,6 @@ import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { selectBalance, selectToken } from "../../redux/auth/authSelectors";
 import UserInfo from "../UserInfo/UserInfo";
 import btnLogout from "../../images/sprite.svg";
-import { logoutUser } from "../../redux/auth/authSlice";
 
 const Header: React.FC = () => {
   const isTabletOrDesk = useIsTabletOrDesktop();
@@ -97,7 +96,7 @@ const Header: React.FC = () => {
             <BoxForBtnLogout>
               <UserInfo />
 
-              <button type="button" onClick={() => dispatch(logoutUser())}>
+              <button type="button" onClick={() => {}}>
                 <BtnLogoutIcon>
                   <use href={btnLogout + "#icon-logout"}></use>
                 </BtnLogoutIcon>
@@ -136,7 +135,7 @@ const Header: React.FC = () => {
             </BtnMenu>
             <BoxForBtnLogout>
               <UserInfo />
-              <button type="button" onClick={() => dispatch(logoutUser())}>
+              <button type="button" onClick={() => {}}>
                 <BtnLogoutIcon>
                   <use href={btnLogout + "#icon-logout"}></use>
                 </BtnLogoutIcon>

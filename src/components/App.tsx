@@ -2,6 +2,8 @@ import React, { Suspense, lazy } from "react";
 import Loader from "./Loader/Loader";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./Layout/Layout";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const App: React.FunctionComponent = () => {
   const AuthPage = lazy(() => import("../pages/AuthPage/AuthPage"));
@@ -11,6 +13,7 @@ export const App: React.FunctionComponent = () => {
   const PlanningPage = lazy(() => import("../pages/PlanningPage/PlanningPage"));
   return (
     <Suspense fallback={<Loader />}>
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<MainPage />} />

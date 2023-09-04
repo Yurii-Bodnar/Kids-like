@@ -4,16 +4,19 @@ export const theme: ITheme = {
     black: "#000",
     grey: "#858598",
     greySecond: "#a6abb9",
+    greyThird: "#f6f7fb",
     white: "#FFFFFF",
     orange: "#FFBC33",
     orangeSecond: "#FFDE99",
     blue: "#5679D7",
     backdrop: "rgba(0, 0, 0, 0.20)",
+    inputBg: "rgba(0, 0, 0, 0.15) inset",
   },
 
   fonts: {
     main: "Montserrat, sans-serif",
     mainM: "Montserrat Medium",
+    mainSemiBold: "Montserrat SemiBold",
   },
   fontSizes: {
     xs: "10px",
@@ -27,6 +30,7 @@ export const theme: ITheme = {
   fontWeights: {
     regular: 400,
     normal: 500,
+    semiBold: 600,
     bold: 700,
   },
 

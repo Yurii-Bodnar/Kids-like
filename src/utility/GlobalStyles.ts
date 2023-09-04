@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: ${(p) => p.theme.fonts.main};
     padding: 0 20px;
+    position: relative;
     @media screen and (min-width: 768px){
      padding: 0 94px;
     }
@@ -21,6 +22,11 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     cursor: pointer;
+    transition: cubic-bezier(0.25, 0.46, 0.45, 0.94) 250ms;
+    &:hover {
+    transform: translate(-1%, -1%);
+    
+  }
   }
   ul {
     list-style: none;
@@ -29,6 +35,13 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     border: none;
     background-color: transparent;
+    transition: cubic-bezier(0.25, 0.46, 0.45, 0.94) 250ms;
+
+    &:hover {
+    transform: translate(-1%, -1%);
+    box-shadow: rgba(0, 0, 0, 0.25) 4px 4px 6px,
+      rgba(255, 255, 255, 0.3) -4px -4px 6px;
+  }
   }
 `;
 

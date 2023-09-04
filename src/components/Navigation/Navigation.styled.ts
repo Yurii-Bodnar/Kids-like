@@ -64,6 +64,10 @@ export const LinkForUnregisteredUser = styled(NavLink)`
   color: ${(p) => p.theme.colors.grey};
   padding: 0 15px 0 0;
   border-right: 1px solid ${(p) => p.theme.colors.grey};
+  font-family: ${(p) => p.theme.fonts.mainM};
+  font-size: ${(p) => p.theme.fontSizes.s};
+  font-weight: ${(p) => p.theme.fontWeights.normal};
+  letter-spacing: 0.48px;
   &.active {
     color: ${(p) => p.theme.colors.black};
   }
@@ -71,6 +75,10 @@ export const LinkForUnregisteredUser = styled(NavLink)`
 export const LinkForUnregisteredUserContact = styled(NavLink)`
   color: ${(p) => p.theme.colors.grey};
   padding: 0 0 0 15px;
+  font-family: ${(p) => p.theme.fonts.mainM};
+  font-size: ${(p) => p.theme.fontSizes.s};
+  font-weight: ${(p) => p.theme.fontWeights.normal};
+  letter-spacing: 0.48px;
 
   &.active {
     color: ${(p) => p.theme.colors.black};

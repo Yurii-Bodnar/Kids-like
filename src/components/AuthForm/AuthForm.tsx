@@ -17,9 +17,11 @@ import {
   selectErrorMessage,
   selectSuccessMessage,
 } from "../../redux/auth/authSelectors";
+import { useNavigate } from "react-router-dom";
 
 const AuthForm = () => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const errorMessage = useAppSelector(selectErrorMessage);
   const successMessage = useAppSelector(selectSuccessMessage);
 
@@ -43,6 +45,7 @@ const AuthForm = () => {
         password: values.password,
       };
       dispatch(registerUser(user));
+      navigate("/");
     },
   });
   return (

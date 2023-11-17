@@ -1,9 +1,11 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect } from "react";
 import Loader from "./Loader/Loader";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useAppSelector } from "../hooks/hooks";
+import { selectToken } from "../redux/auth/authSelectors";
 
 export const App: React.FunctionComponent = () => {
   const AuthPage = lazy(() => import("../pages/AuthPage/AuthPage"));
@@ -11,6 +13,14 @@ export const App: React.FunctionComponent = () => {
   const ContactsPage = lazy(() => import("../pages/ContactsPage/ContactsPage"));
   const MainPage = lazy(() => import("../pages/MainPage/MainPage"));
   const PlanningPage = lazy(() => import("../pages/PlanningPage/PlanningPage"));
+
+  const isAuth = useAppSelector(selectToken);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!isAuth) {
+      navigate("/auth");
+    }
+  }, [isAuth, navigate]);
   return (
     <Suspense fallback={<Loader />}>
       <ToastContainer />

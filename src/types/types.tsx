@@ -1,3 +1,4 @@
+
 export interface ITheme {
   colors: {
     black: string;
@@ -42,6 +43,10 @@ export type PropsForNavigation = {
   isModalOpen: boolean;
   setIsModalOpen: (value: boolean) => void;
 };
+export type PropsForPublicRoute = {
+  component:React.FC;
+  redirectTo:string
+}
 
 export interface IAuthResponse {
   token: string;
